@@ -291,8 +291,8 @@ export const LogoCarousel = () => {
         <div className="logo-carousel-track" style={{ animation: 'logo-scroll 50s linear infinite' }}>
           {row1Doubled.map((logo, i) => (
             <a key={`${logo.name}-${i}`} href={logo.url} style={{ textDecoration: 'none', border: 'none' }}>
-              <img className="block dark:hidden object-contain" style={{ width: logo.width || '150px', maxWidth: '100%' }} src={logo.lightSrc} alt={logo.name} />
-              <img className="hidden dark:block object-contain" style={{ width: logo.width || '150px', maxWidth: '100%' }} src={logo.darkSrc} alt={logo.name} />
+              <img className="block dark:hidden object-contain" style={{ width: logo.width || '150px', maxWidth: '100%' }} src={logo.lightSrc} alt={logo.name} noZoom />
+              <img className="hidden dark:block object-contain" style={{ width: logo.width || '150px', maxWidth: '100%' }} src={logo.darkSrc} alt={logo.name} noZoom />
             </a>
           ))}
         </div>
@@ -301,8 +301,8 @@ export const LogoCarousel = () => {
         <div className="logo-carousel-track" style={{ animation: 'logo-scroll 60s linear infinite reverse' }}>
           {row2Doubled.map((logo, i) => (
             <a key={`${logo.name}-${i}`} href={logo.url} style={{ textDecoration: 'none', border: 'none' }}>
-              <img className="block dark:hidden object-contain" style={{ width: logo.width || '150px', maxWidth: '100%' }} src={logo.lightSrc} alt={logo.name} />
-              <img className="hidden dark:block object-contain" style={{ width: logo.width || '150px', maxWidth: '100%' }} src={logo.darkSrc} alt={logo.name} />
+              <img className="block dark:hidden object-contain" style={{ width: logo.width || '150px', maxWidth: '100%' }} src={logo.lightSrc} alt={logo.name} noZoom />
+              <img className="hidden dark:block object-contain" style={{ width: logo.width || '150px', maxWidth: '100%' }} src={logo.darkSrc} alt={logo.name} noZoom />
             </a>
           ))}
         </div>
