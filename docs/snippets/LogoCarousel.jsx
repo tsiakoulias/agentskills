@@ -31,7 +31,7 @@ export const LogoCarousel = () => {
       url: "https://autohand.ai/",
       lightSrc: "/images/logos/autohand/autohand-light.svg",
       darkSrc: "/images/logos/autohand/autohand-dark.svg",
-      width: "120px",
+      scale: 0.8,
       instructionsUrl: "https://autohand.ai/docs/working-with-autohand-code/agent-skills.html",
       sourceCodeUrl: "https://github.com/autohandai/code-cli",
     },
@@ -59,7 +59,7 @@ export const LogoCarousel = () => {
       url: "https://mux.coder.com/",
       lightSrc: "/images/logos/mux/mux-editor-light.svg",
       darkSrc: "/images/logos/mux/mux-editor-dark.svg",
-      width: "120px",
+      scale: 0.8,
       instructionsUrl: "https://mux.coder.com/agent-skills",
       sourceCodeUrl: "https://github.com/coder/mux",
     },
@@ -77,7 +77,7 @@ export const LogoCarousel = () => {
       url: "https://ampcode.com/",
       lightSrc: "/images/logos/amp/amp-logo-light.svg",
       darkSrc: "/images/logos/amp/amp-logo-dark.svg",
-      width: "120px",
+      scale: 0.8,
       instructionsUrl: "https://ampcode.com/manual#agent-skills",
     },
     {
@@ -170,7 +170,7 @@ export const LogoCarousel = () => {
       url: "https://shittycodingagent.ai/",
       lightSrc: "/images/logos/pi/pi-logo-light.svg",
       darkSrc: "/images/logos/pi/pi-logo-dark.svg",
-      width: "80px",
+      scale: 0.55,
       instructionsUrl: "https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/docs/skills.md",
       sourceCodeUrl: "https://github.com/badlogic/pi-mono",
     },
@@ -223,7 +223,7 @@ export const LogoCarousel = () => {
       url: "https://github.com/mistralai/mistral-vibe",
       lightSrc: "/images/logos/mistral-vibe/vibe-logo_black.svg",
       darkSrc: "/images/logos/mistral-vibe/vibe-logo_white.svg",
-      width: "80px",
+      scale: 0.55,
       instructionsUrl: "https://github.com/mistralai/mistral-vibe",
       sourceCodeUrl: "https://github.com/mistralai/mistral-vibe",
     },
@@ -233,7 +233,7 @@ export const LogoCarousel = () => {
       url: "https://commandcode.ai/",
       lightSrc: "/images/logos/command-code/command-code-logo-for-light.svg",
       darkSrc: "/images/logos/command-code/command-code-logo-for-dark.svg",
-      width: "200px",
+      scale: 1.33,
       instructionsUrl: "https://commandcode.ai/docs/skills",
     },
     {
@@ -242,7 +242,7 @@ export const LogoCarousel = () => {
       url: "https://ona.com",
       lightSrc: "/images/logos/ona/ona-wordmark-light.svg",
       darkSrc: "/images/logos/ona/ona-wordmark-dark.svg",
-      width: "120px",
+      scale: 0.8,
       instructionsUrl: "https://ona.com/docs/ona/agents-md#skills-for-repository-specific-workflows",
     },
     {
@@ -322,22 +322,28 @@ export const LogoCarousel = () => {
     <>
       <div className="logo-carousel">
         <div className="logo-carousel-track" style={{ animation: 'logo-scroll 50s linear infinite' }}>
-          {row1Doubled.map((logo, i) => (
-            <a key={`${logo.name}-${i}`} href={logo.url} style={{ textDecoration: 'none', border: 'none' }}>
-              <img className="block dark:hidden object-contain" style={{ width: logo.width || '150px', maxWidth: '100%' }} src={logo.lightSrc} alt={logo.name} noZoom />
-              <img className="hidden dark:block object-contain" style={{ width: logo.width || '150px', maxWidth: '100%' }} src={logo.darkSrc} alt={logo.name} noZoom />
-            </a>
-          ))}
+          {row1Doubled.map((logo, i) => {
+            const imgStyle = { width: 150 * (logo.scale || 1), maxWidth: "100%" };
+            return (
+              <a key={`${logo.name}-${i}`} href={logo.url} style={{ textDecoration: 'none', border: 'none' }}>
+                <img className="block dark:hidden object-contain" style={imgStyle} src={logo.lightSrc} alt={logo.name} noZoom />
+                <img className="hidden dark:block object-contain" style={imgStyle} src={logo.darkSrc} alt={logo.name} noZoom />
+              </a>
+            );
+          })}
         </div>
       </div>
       <div className="logo-carousel">
         <div className="logo-carousel-track" style={{ animation: 'logo-scroll 60s linear infinite reverse' }}>
-          {row2Doubled.map((logo, i) => (
-            <a key={`${logo.name}-${i}`} href={logo.url} style={{ textDecoration: 'none', border: 'none' }}>
-              <img className="block dark:hidden object-contain" style={{ width: logo.width || '150px', maxWidth: '100%' }} src={logo.lightSrc} alt={logo.name} noZoom />
-              <img className="hidden dark:block object-contain" style={{ width: logo.width || '150px', maxWidth: '100%' }} src={logo.darkSrc} alt={logo.name} noZoom />
-            </a>
-          ))}
+          {row2Doubled.map((logo, i) => {
+            const imgStyle = { width: 150 * (logo.scale || 1), maxWidth: "100%" };
+            return (
+              <a key={`${logo.name}-${i}`} href={logo.url} style={{ textDecoration: 'none', border: 'none' }}>
+                <img className="block dark:hidden object-contain" style={imgStyle} src={logo.lightSrc} alt={logo.name} noZoom />
+                <img className="hidden dark:block object-contain" style={imgStyle} src={logo.darkSrc} alt={logo.name} noZoom />
+              </a>
+            );
+          })}
         </div>
       </div>
     </>
