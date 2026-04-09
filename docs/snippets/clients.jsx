@@ -294,4 +294,12 @@ export const clients = [
     darkSrc: "/images/logos/kiro/kiro-logo-dark.svg",
     instructionsUrl: "https://kiro.dev/docs/skills/",
   },
+  {
+    name: "Google AI Edge Gallery",
+    description: "Google AI Edge Gallery is the premier destination for running the world's most powerful open-source Large Language Models (LLMs) on your mobile device",
+    url: "https://github.com/google-ai-edge/gallery",
+    lightSrc: "/images/logos/google-ai-edge-gallery/google-ai-edge-gallery-light.svg",
+    darkSrc: "/images/logos/google-ai-edge-gallery/google-ai-edge-gallery-dark.svg",
+    instructionsUrl: "https://github.com/google-ai-edge/gallery/tree/main/skills",
+  },
 ];
