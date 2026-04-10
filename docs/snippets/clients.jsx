@@ -300,6 +300,7 @@ export const clients = [
     url: "https://github.com/google-ai-edge/gallery",
     lightSrc: "/images/logos/google-ai-edge-gallery/google-ai-edge-gallery-light.svg",
     darkSrc: "/images/logos/google-ai-edge-gallery/google-ai-edge-gallery-dark.svg",
+    scale: 0.45,
     instructionsUrl: "https://github.com/google-ai-edge/gallery/tree/main/skills",
   },
 ];
